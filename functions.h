@@ -56,3 +56,36 @@ double surface_area_frustum(double radius1, double radius2, double height) {
 double volume_frustum(double radius1, double radius2, double height) {
     return (1.0 / 3.0) * M_PI * height * (radius1 * radius1 + radius2 * radius2 + radius1 * radius2);
 }
+
+double surface_area_cone_hemisphere(double radius, double height) {
+    return surface_area_cone(radius, height) + surface_area_hemisphere(radius);
+}
+
+double volume_cone_hemisphere(double radius, double height) {
+    return volume_cone(radius, height) + (2.0 / 3.0) * volume_hemisphere(radius);
+}
+
+double surface_area_cylinder_cone(double radius, double height1, double height2) {
+    return surface_area_cylinder(radius, height1) + surface_area_cone(radius, height2);
+}
+
+double volume_cylinder_cone(double radius, double height1, double height2) {
+    return volume_cylinder(radius, height1) + volume_cone(radius, height2);
+}
+
+double surface_area_cylinder_hemisphere(double radius, double height) {
+    return surface_area_cylinder(radius, height) + 2 * surface_area_hemisphere(radius);
+}
+
+double volume_cylinder_hemisphere(double radius, double height) {
+    return volume_cylinder(radius, height) + 2 * (2.0 / 3.0) * volume_hemisphere(radius);
+}
+
+double surface_area_cylinder_2_cones(double radius, double height1, double height2) {
+    return surface_area_cylinder(radius, height1) + 2 * surface_area_cone(radius, height2);
+}
+
+double volume_cylinder_2_cones(double radius, double height1, double height2) {
+    return volume_cylinder(radius, height1) + 2 * volume_cone(radius, height2);
+}
+

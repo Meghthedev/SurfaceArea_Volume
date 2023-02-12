@@ -62,7 +62,7 @@ double surface_area_cone_hemisphere(double radius, double height) {
 }
 
 double volume_cone_hemisphere(double radius, double height) {
-    return volume_cone(radius, height) + (2.0 / 3.0) * volume_hemisphere(radius);
+    return volume_cone(radius, height) + volume_hemisphere(radius);
 }
 
 double surface_area_cylinder_cone(double radius, double height1, double height2) {
